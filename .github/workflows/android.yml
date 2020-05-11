@@ -18,4 +18,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
+      env: 
+        sonar.headerValue = ${{ secrets.sonar_header_value }}
+        sonar.analyticsKey = ${{ secrets.sonar_analyticsKey }}
+        sonar.baseUrl = ${{ secrets.sonar_baseUrl }}
       run: ./gradlew build --warning-mode=all --stacktrace
