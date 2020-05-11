@@ -10,7 +10,7 @@ jobs:
 
   pull_docker_image:
     runs-on:
-      - self-hosted
+      - ubuntu-latest
       - linux
       - aws
     steps:
@@ -26,7 +26,7 @@ jobs:
   build:
     needs: pull_docker_image
     runs-on:
-      - self-hosted
+      - ubuntu-latest
       - linux
       - aws
     container: nhsxpivotal.azurecr.io/sonar-colocate-services-image
