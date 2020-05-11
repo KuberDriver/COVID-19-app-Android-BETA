@@ -9,10 +9,7 @@ on:
 jobs:
 
   pull_docker_image:
-    runs-on:
-      - ubuntu-latest
-      - linux
-      - aws
+    runs-on: ubuntu-latest
     steps:
       - name: Login to Docker
         run: |
@@ -25,10 +22,7 @@ jobs:
 
   build:
     needs: pull_docker_image
-    runs-on:
-      - ubuntu-latest
-      - linux
-      - aws
+    runs-on: ubuntu-latest
     container: nhsxpivotal.azurecr.io/sonar-colocate-services-image
 
     steps:
